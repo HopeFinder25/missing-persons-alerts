@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hopefinder25.github.io/missing-persons-alerts/sitemap.xml
