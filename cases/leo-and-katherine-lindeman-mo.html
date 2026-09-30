@@ -38,6 +38,8 @@ header.top{position:sticky;top:0;z-index:50;background:#0b0e1af2;border-bottom:1
 .nav nav a.on,.nav nav a:hover{background:var(--card);color:var(--gold)}
 .nav nav a.support{background:var(--gold);color:#111;font-weight:800;margin-left:6px}
 .nav nav a.support:hover{background:#ffc233;color:#111}
+.sharebtn{margin-left:8px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap}
+.sharebtn:active{background:var(--gold);color:#111}
 main{max-width:1100px;margin:0 auto;padding:18px 14px 60px}
 .hero{text-align:center;padding:26px 10px 20px}
 .hero img{max-width:280px;width:70%;height:auto}
@@ -125,6 +127,7 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 <img src="../assets/logo.png" alt="Missing Persons Alerts Nationwide logo">
 <div class="brand">MISSING PERSONS<br>ALERTS NATIONWIDE</div>
 <nav><a href="../index.html" class="">Home</a><a href="../cases.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
+<button class="sharebtn" id="shareBtn" type="button">Share</button>
 </div></header>
 <main><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Leo and Katherine Lindeman, 73 \u2014 MO", "url": "https://missingpersonsalerts.github.io/missing-persons-alerts/cases/leo-and-katherine-lindeman-mo.html", "description": "Verified missing person alert for Leo and Katherine Lindeman, MO."}</script>
 <div class="casewrap">
@@ -153,6 +156,13 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 </footer>
 <script>
 if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}
+var sb=document.getElementById("shareBtn");
+if(sb){sb.addEventListener("click",function(){
+var url=location.href;
+if(navigator.share){navigator.share({title:document.title,url:url}).catch(function(){});}
+else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){sb.textContent="Link copied";setTimeout(function(){sb.textContent="Share";},1600);},function(){window.prompt("Copy this link:",url);});}
+else{window.prompt("Copy this link:",url);}
+});}
 </script>
 </body>
 </html>
