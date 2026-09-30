@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="manifest" href="../manifest.json">
+<meta name="theme-color" content="#0b0e1a">
+<link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MP Alerts">
+
 <title>Dayavauni Watson, 13 — Missing Person Alert — Missing Persons Alerts Nationwide</title>
 <link rel="canonical" href="https://missingpersonsalerts.github.io/missing-persons-alerts/cases/dayavauni-watson-sd.html">
 <meta name="description" content="Verified missing person alert: Dayavauni Watson, 13, SD. Missing since 2026-09-25. If seen, call Rapid City Police Department.">
@@ -92,13 +100,31 @@ text-decoration:none;border-radius:12px;padding:16px;font-weight:800;font-size:2
 .share a,.share button{flex:1;min-width:120px;text-align:center;background:var(--card);border:1px solid var(--line);
 color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weight:700;font-size:15px;cursor:pointer}
 .share a:hover,.share button:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Live board rows on the homepage */
+.boardhead .live{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:15px;letter-spacing:2px;font-weight:700}
+.boardhead .dot{width:12px;height:12px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:blink 2s infinite}
+@keyframes blink{50%{opacity:.4}}
+.boardhead h2.sec{margin-top:10px}
+.boardrows .row{display:flex;justify-content:space-between;gap:12px;background:#141829;border:1px solid #2a3352;border-left:6px solid #34d399;border-radius:8px;padding:14px;margin:10px 0}
+.boardrows .r-name{font-size:24px;font-weight:700;color:#fff;line-height:1.25}
+.boardrows .r-meta{font-size:17px;color:#d7d7d7;margin-top:6px}
+.boardrows .r-desc{font-size:15px;color:#b5b5b5;margin-top:6px;line-height:1.45}
+.boardrows .r-photo{width:88px;flex-shrink:0;border-radius:6px;overflow:hidden;border:1px solid #2a3352;align-self:flex-start}
+.boardrows .r-photo img{width:100%;display:block}
+.boardrows .r-side{text-align:right;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-end;gap:10px;max-width:44%}
+.boardrows .pill{font-size:15px;font-weight:700;letter-spacing:2px;padding:6px 12px;border-radius:20px;background:#34d399;color:#052e1b}
+.boardrows .call{display:block;font-size:15px;color:#7dd3fc;text-decoration:none;line-height:1.5;border:1px solid #1d4ed8;border-radius:8px;padding:8px 10px;background:#0f1e3d}
+.boardrows .call .tap{display:block;font-size:11px;letter-spacing:2px;color:#93c5fd;margin-top:2px}
+.boardrows .call.no-link{color:#9a9a9a;border-color:#333;background:none}
+.boardrows .empty{color:#8a8a8a;font-size:16px;padding:12px 0}
 </style>
 </head>
 <body>
 <header class="top"><div class="nav">
 <img src="../assets/logo.png" alt="Missing Persons Alerts Nationwide logo">
 <div class="brand">MISSING PERSONS<br>ALERTS NATIONWIDE</div>
-<nav><a href="../index.html" class="">Home</a><a href="../cases.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../board.html" class="">Flight Board</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
+<nav><a href="../index.html" class="">Home</a><a href="../cases.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
 </div></header>
 <main><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Dayavauni Watson, 13 \u2014 SD", "url": "https://missingpersonsalerts.github.io/missing-persons-alerts/cases/dayavauni-watson-sd.html", "description": "Verified missing person alert for Dayavauni Watson, SD."}</script>
 <div class="casewrap">
@@ -125,5 +151,8 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 <p style="margin:10px 0"><a href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener" style="color:var(--gold);font-weight:800;text-decoration:none">Support our mission on Ko-fi</a> <span style="color:var(--muted)">· donations are not tax-deductible</span></p>
 <p style="margin-top:8px">Missing Persons Alerts Nationwide · Verified alerts only · &copy; 2026</p>
 </footer>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("../sw.js").catch(function(){});});}
+</script>
 </body>
 </html>
