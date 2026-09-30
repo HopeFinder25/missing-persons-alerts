@@ -41,6 +41,10 @@ header.top{position:sticky;top:0;z-index:50;background:#0b0e1af2;border-bottom:1
 .nav nav a.support:hover{background:#ffc233;color:#111}
 .sharebtn{margin-left:8px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-weight:800;font-size:13px;padding:8px 14px;border-radius:8px;cursor:pointer;white-space:nowrap}
 .sharebtn:active{background:var(--gold);color:#111}
+.installbar{display:flex;align-items:center;gap:10px;background:#1a1206;border-bottom:1px solid #8a6d1c;color:#f5d76e;padding:10px 14px;font-size:14px}
+.installbar[hidden]{display:none}
+.installbar b{color:#ffd34d}
+.installbar button{margin-left:auto;background:none;border:1px solid #8a6d1c;color:#f5d76e;border-radius:8px;font-size:16px;line-height:1;padding:4px 10px;cursor:pointer;flex:none}
 main{max-width:1100px;margin:0 auto;padding:18px 14px 60px}
 .hero{text-align:center;padding:26px 10px 20px}
 .hero img{max-width:280px;width:70%;height:auto}
@@ -133,6 +137,7 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 <nav><a href="../index.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
 <button class="sharebtn" id="shareBtn" type="button">Share</button>
 </div></header>
+<div class="installbar" id="installbar" hidden><span>📲 <b>Get the app:</b> open your browser menu (⋮) → "Add to Home screen"</span><button id="installx" aria-label="Dismiss" type="button">×</button></div>
 <main><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Ethen Hamed, 16 \u2014 MI", "url": "https://missingpersonsalerts.github.io/missing-persons-alerts/cases/ethen-hamed-mi.html", "description": "Verified missing person alert for Ethen Hamed, MI."}</script>
 <div class="casewrap">
 <a class="backlink" href="../index.html">← All active cases</a>
@@ -167,6 +172,11 @@ if(navigator.share){navigator.share({title:document.title,url:url}).catch(functi
 else if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(function(){sb.textContent="Link copied";setTimeout(function(){sb.textContent="Share";},1600);},function(){window.prompt("Copy this link:",url);});}
 else{window.prompt("Copy this link:",url);}
 });}
+var ib=document.getElementById("installbar"),ix=document.getElementById("installx");
+var inst=window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone===true;
+var hideb=false;try{hideb=localStorage.getItem("mpa_noinstall")==="1";}catch(e){}
+if(ib&&!inst&&!hideb){ib.hidden=false;}
+if(ix&&ib){ix.addEventListener("click",function(){ib.hidden=true;try{localStorage.setItem("mpa_noinstall","1");}catch(e){}});}
 </script>
 </body>
 </html>
