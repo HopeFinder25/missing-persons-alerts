@@ -32,6 +32,7 @@ a{color:var(--call)}
 header.top{position:sticky;top:0;z-index:50;background:#0b0e1af2;border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
 .nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:10px;padding:10px 14px}
 .nav img{height:44px;width:auto}
+.homelink{display:flex;align-items:center;gap:10px;text-decoration:none}
 .nav .brand{font-weight:800;font-size:15px;letter-spacing:1px;color:var(--gold);line-height:1.2}
 .nav nav{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
 .nav nav a{color:var(--text);text-decoration:none;font-size:13px;padding:8px 10px;border-radius:8px}
@@ -124,9 +125,9 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 </head>
 <body>
 <header class="top"><div class="nav">
-<img src="../assets/logo.png" alt="Missing Persons Alerts Nationwide logo">
-<div class="brand">MISSING PERSONS<br>ALERTS NATIONWIDE</div>
-<nav><a href="../index.html" class="">Home</a><a href="../cases.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
+<a class="homelink" href="../index.html" aria-label="Home — active cases"><img src="../assets/logo.png" alt="Missing Persons Alerts Nationwide logo">
+<div class="brand">MISSING PERSONS<br>ALERTS NATIONWIDE</div></a>
+<nav><a href="../cases.html" class="on">Cases</a><a href="../submit.html" class="">Submit a Case</a><a href="../found-safe.html" class="">Found Safe</a><a href="../about.html" class="">About</a><a href="../contact.html" class="">Contact</a><a class="support" href="https://ko-fi.com/missingpersonsalerts" target="_blank" rel="noopener">Support</a></nav>
 <button class="sharebtn" id="shareBtn" type="button">Share</button>
 </div></header>
 <main><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "name": "Adrian Zane Robertson, 15 \u2014 Escambia County, FL", "url": "https://missingpersonsalerts.github.io/missing-persons-alerts/cases/adrian-zane-robertson-fl.html", "description": "Verified missing person alert for Adrian Zane Robertson, Escambia County, FL."}</script>
