@@ -121,6 +121,14 @@ text-decoration:none;border-radius:12px;padding:16px;font-weight:800;font-size:2
 .share a,.share button{flex:1;min-width:120px;text-align:center;background:var(--card);border:1px solid var(--line);
 color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weight:700;font-size:15px;cursor:pointer}
 .share a:hover,.share button:hover{border-color:var(--gold);color:var(--gold)}
+@media print{
+header.top,.installbar,.backlink,.case-title,.case-loc,.verified-page,.alert-strip,
+.fact,.bigcall,.sec,.share,.timeline,footer{display:none!important}
+body{background:#fff;color:#000}
+.casewrap{max-width:100%;margin:0}
+.case-photo{border:0;border-radius:0;background:#fff;overflow:visible}
+.case-photo img{width:100%;max-width:7.5in;height:auto;margin:0 auto;display:block}
+}
 
 /* Live board rows on the homepage */
 .boardhead .live{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:15px;letter-spacing:2px;font-weight:700}
@@ -169,6 +177,7 @@ color:var(--text);text-decoration:none;border-radius:10px;padding:12px;font-weig
 <a href="sms:?body=MISSING%3A%20Maryam%20Mirova%20%E2%80%94%20please%20share%20https%3A//missingpersonsalerts.github.io/missing-persons-alerts/cases/maryam-mirova-ca/">Share by SMS</a>
 <a href="https://wa.me/?text=MISSING%3A%20Maryam%20Mirova%20%E2%80%94%20please%20share%20https%3A%2F%2Fmissingpersonsalerts.github.io%2Fmissing-persons-alerts%2Fcases%2Fmaryam-mirova-ca%2F" target="_blank" rel="noopener">Share on WhatsApp</a>
 <button type="button" onclick="navigator.clipboard.writeText('https://missingpersonsalerts.github.io/missing-persons-alerts/cases/maryam-mirova-ca/');this.textContent='Link copied ✓'">Copy link</button>
+<button type="button" onclick="window.print()">Print poster</button>
 </div>
 </div></main>
 <footer>
